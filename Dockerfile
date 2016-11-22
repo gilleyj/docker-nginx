@@ -57,8 +57,8 @@ ENV DB_HOST="mariadb" \
 COPY container_confs /
 
 # Add the www-data user and group, fail on error
-RUN set -x ; \
-	addgroup -g 82 -S www-data ; \
+# RUN set -x ; \
+RUN addgroup -g 82 -S www-data ; \
 	adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1 
 
 # The following things are not really needed
